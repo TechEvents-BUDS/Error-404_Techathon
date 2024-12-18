@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fin.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="fin.html">Home</a></li>
+                <li><a href="fin.html">Budget Plans</a></li>
+                <li><a href="fin.html">Financial Goals</a></li>
+                <li><a href="fin.html">Spending Advice</a></li>
+                <li><a href="fin.html">Contact</a></li>
+                <li><a href="tax.html" target="_blank">Tax Calculator</a></li>
+                <li><a href="invest.html">Investment Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="investment-calculator">
+        <h2>Investment Calculator</h2>
+        <form id="investment-form">
+            <label for="investment-amount">Initial Investment Amount:</label>
+            <input type="number" id="investment-amount" placeholder="Enter amount" required>
+    
+            <label for="interest-rate">Annual Interest Rate (%):</label>
+            <input type="number" id="interest-rate" placeholder="Enter interest rate" required>
+    
+            <label for="years">Investment Period (Years):</label>
+            <input type="number" id="years" placeholder="Enter number of years" required>
+    
+            <button type="submit" id="calculate-investment-btn">Calculate Investment</button>
+        </form>
+        <div id="investment-result"></div>
+    </section>
+    <script>
+        // Investment Calculation Function
+function calculateInvestment(principal, rate, years) {
+    const futureValue = (principal * Math.pow(1 + (rate / 100), years)).toFixed(2);
+    const earnings = (futureValue - principal).toFixed(2);
+
+    return `
+        <h3>Investment Results:</h3>
+        <ul>
+            <li><strong>Future Value:</strong> $${futureValue}</li>
+            <li><strong>Earnings:</strong> $${earnings}</li>
+        </ul>
+    `;
+}
+
+// Investment form submission handler
+document.getElementById("investment-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const principal = parseFloat(document.getElementById("investment-amount").value);
+    const rate = parseFloat(document.getElementById("interest-rate").value);
+    const years = parseInt(document.getElementById("years").value);
+
+    if (isNaN(principal) || isNaN(rate) || isNaN(years) || principal <= 0 || rate < 0 || years <= 0) {
+        alert("Please enter valid values for all fields.");
+        return;
+    }
+
+    const investmentResult = calculateInvestment(principal, rate, years);
+    document.getElementById("investment-result").innerHTML = investmentResult;
+});
+
+    </script>
+
+<footer>
+    <p>&copy; 2024 Personal Finance Educator | All rights reserved</p>
+</footer>
+    
+</body>
+</html>
