@@ -46,14 +46,14 @@
                 <option value="retirement-savings">Saving for Retirement</option>
             </select>
 
-            <button type="submit">Generate Plan</button>
+            <button type="submit" id="sub" >Generate Plan</button>
         </form>
     </section>
 
     <!-- Budget Plans Section -->
     <section id="budget-plans">
         <h2>Your Personalized Budget Plan</h2>
-        <div id="budget-plan-result"></div>
+        <div id="budget-plan-result"></div> 
     </section>
 
     <!-- Saving Money Suggestions Section -->
@@ -78,14 +78,9 @@
             <input type="email" id="email" required>
             <label for="message">Your Message:</label>
             <textarea id="message" required></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit" id="sub-form">Submit</button>
         </form>
-
-        <!-- Feedback Section -->
-        <div id="feedback" class="feedback-box">
-            <h3>Thank you for your feedback!</h3>
-            <p id="feedback-text">Your message has been submitted successfully. We will get back to you shortly.</p>
-        </div>
+        <div id="response"></div>
     </section>
 
     <footer>
