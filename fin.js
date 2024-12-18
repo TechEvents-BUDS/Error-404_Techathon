@@ -95,3 +95,33 @@ document.getElementById("financial-form").addEventListener("submit", function (e
 document.getElementById("sub-form").onclick = function() {
     alert("FORM SUBMITTED SUCCESSFULLY!!!");
 };
+
+// Function to perform currency conversion
+document.getElementById("convert-btn").addEventListener("click", function() {
+    const amount = parseFloat(document.getElementById("amount").value);
+    const fromCurrency = document.getElementById("from-currency").value;
+    const toCurrency = document.getElementById("to-currency").value;
+
+    if (isNaN(amount) || fromCurrency === toCurrency) {
+        alert("Please enter a valid amount and choose different currencies.");
+        return;
+    }
+
+    // Simulate currency conversion using a static conversion rate (mock example)
+    const exchangeRates = {
+        "USD": { "EUR": 0.85, "GBP": 0.75, "PKR": 285 },
+        "EUR": { "USD": 1.18, "GBP": 0.88, "PKR": 340 },
+        "GBP": { "USD": 1.33, "EUR": 1.14, "PKR": 420 },
+        "PKR": { "USD": 1 / 285, "EUR": 1 / 340, "GBP": 1 / 420 }
+    };
+
+    // Conversion calculation
+    const rate = exchangeRates[fromCurrency][toCurrency];
+    const convertedAmount = (amount * rate).toFixed(2);
+
+    // Display the result
+    document.getElementById("conversion-result").innerHTML = `
+        ${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}
+    `;
+});
+
