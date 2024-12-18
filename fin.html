@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Educator</title>
+    <link rel="stylesheet" href="fin.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#budget-plans">Budget Plans</a></li>
+                <li><a href="#financial-goals">Financial Goals</a></li>
+                <li><a href="#advice">Spending Advice</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Homepage Section -->
+    <section id="home">
+        <div class="hero">
+            <h1>Take Control of Your Financial Future</h1>
+            <p>Get personalized budgeting advice, tips on saving money, and smart spending strategies based on your goals.</p>
+        </div>
+    </section>
+
+    <!-- Financial Input Section -->
+    <section id="financial-goals">
+        <h2>Enter Your Financial Information</h2>
+        <form id="financial-form">
+            <label for="income">Monthly Income:</label>
+            <input type="number" id="income" required placeholder="Enter your monthly income">
+            
+            <label for="expenses">Monthly Expenses:</label>
+            <input type="number" id="expenses" required placeholder="Enter your monthly expenses">
+            
+            <label for="goal">Financial Goal:</label>
+            <select id="goal" required>
+                <option value="">Select a goal</option>
+                <option value="saving-for-house">Saving for a House</option>
+                <option value="emergency-fund">Building an Emergency Fund</option>
+                <option value="debt-reduction">Reducing Debt</option>
+                <option value="retirement-savings">Saving for Retirement</option>
+            </select>
+
+            <button type="submit">Generate Plan</button>
+        </form>
+    </section>
+
+    <!-- Budget Plans Section -->
+    <section id="budget-plans">
+        <h2>Your Personalized Budget Plan</h2>
+        <div id="budget-plan-result"></div>
+    </section>
+
+    <!-- Saving Money Suggestions Section -->
+    <section id="saving-suggestions">
+        <h2>How to Save Money</h2>
+        <ul id="suggestions-list"></ul>
+    </section>
+
+    <!-- Spending Advice Section -->
+    <section id="advice">
+        <h2>Wise Spending Advice</h2>
+        <ul id="spending-advice-list"></ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Your Message:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Feedback Section -->
+        <div id="feedback" class="feedback-box">
+            <h3>Thank you for your feedback!</h3>
+            <p id="feedback-text">Your message has been submitted successfully. We will get back to you shortly.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Personal Finance Educator | All rights reserved</p>
+    </footer>
+
+    <script src="fin.js"></script>
+</body>
+</html>
