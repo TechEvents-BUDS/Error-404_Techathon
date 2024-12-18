@@ -1,226 +1,194 @@
-/* General Body Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
-    color: #fff;
+/* Basic reset */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start; /* Align from the top */
-    height: 100vh;
-    overflow-x: hidden;
-    flex-direction: column;
-}
-
-/* Navbar Styles */
-header {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 1000; /* Ensure navbar stays on top */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    width: 100%;
-    padding: 15px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: #00bfff;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-    text-shadow: 0 0 15px #ffcc00;
-}
-
-/* Hero Section */
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
-    margin-bottom: 20px;
-    margin-left: 120px;
-    margin-right: 10px;
-    width: 80%;
-    margin-top: 90px; /* Account for the fixed navbar height */
-    display: flex;
-    justify-content: center;  /* Horizontally center content */
-    align-items: center;      /* Vertically center content */
-    height: 250px;            /* Fixed height for centering */
-    text-align: center;       /* Center text inside the div */
-    font-size: 30px;
-}
-
-
-/* Form Section - Centering */
-#financial-goals {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00bfff;
-    max-width: 600px;
-    width: 100%;
-    margin: 20px auto; /* Center the section */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-/* Form Styles */
-#financial-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-/* Form input and button elements */
-#financial-form input,
-#financial-form select,
-#financial-form textarea {
-    padding: 12px;
-    margin: 15px 0;
-    border: 2px solid #00bfff;
-    border-radius: 8px;
-    background-color: #333;
-    color: #fff;
-    width: 80%; /* Adjust width */
-    max-width: 500px;
-    font-size: 1.1em;
-    transition: border 0.3s ease;
-}
-
-#financial-form input:focus,
-#financial-form select:focus,
-#financial-form textarea:focus {
-    border-color: #00ff00;
-    outline: none;
-}
-
-#financial-form button {
-    padding: 12px 20px;
-    background-color: #00bfff;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#financial-form button:hover {
-    background-color: #00ff00;
-    text-shadow: 0 0 15px #00ff00;
-}
-
-/* Feedback Box */
-.feedback-box {
-    display: none;
-    background-color: rgba(0, 255, 0, 0.2);
-    color: #00ff00;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00ff00;
-    text-align: center;
-}
-
-/* Budget Plans and Suggestions Section */
-#budget-plans, #saving-suggestions, #advice {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #00bfff;
-    width: 80%;
-    margin: 20px auto;
-    text-align: center;
-}
-
-/* Contact Section */
-#contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 60px;
-}
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-}
-
-#contact-form input,
-#contact-form textarea,
-#contact-form button {
-    padding: 12px 20px;
-    margin: 10px 0;
-    border: 2px solid #00bfff;
-    border-radius: 8px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #333;
-    width: 100%;
-    transition: border 0.3s ease;
-}
-
-#contact-form input:focus,
-#contact-form textarea:focus {
-    border-color: #00ff00;
-    outline: none;
-}
-
-#contact-form button {
-    background-color: #00bfff;
-    color: #fff;
-    cursor: pointer;
-}
-
-#contact-form button:hover {
-    background-color: #00ff00;
-    text-shadow: 0 0 15px #00ff00;
-}
-
-/* Add a rotating background animation */
-@keyframes rotateBackground {
-    0% {
-        background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
-    }
-    50% {
-        background: linear-gradient(45deg, #3f51b5, #ff4081, #2196f3);
-    }
-    100% {
-        background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
-    }
+    box-sizing: border-box;
 }
 
 body {
-    animation: rotateBackground 10s ease infinite;
+    font-family: Arial, sans-serif;
+    background-color: #401c1c;
+    color: #333;
+}
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+  background-color: white;
+    color: #333;
+}
+
+header {
+    background-color: #2C3E50;
+    padding: 20px;  
+    border-radius: 500px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 20px; /* Increased space between links */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 10px 20px; /* Added padding for better spacing */
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adding subtle shadow for 3D effect */
+}
+
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #f39c12;
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    color: #f39c12;
+    transform: translateY(-3px) scale(1.1); /* Slightly lift the text for 3D effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow for hover state */
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+header nav ul li a:active {
+    transform: translateY(1px) scale(1); /* Small tap effect when clicked */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Back to initial shadow */
+}
+
+/* Additional Effects to Smooth the Hovering */
+header nav ul li a:focus {
+    outline: none; /* Removes outline on focus */
+    box-shadow: 0 0 5px rgba(243, 156, 18, 0.8); /* Glow effect on focus */
+}
+
+/* Hover Effect for Full Header */
+header nav ul li a:hover {
+    transition: transform 0.4s ease-in-out, color 0.3s ease;
+}
+
+
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #2C3E50;
+}
+
+.hero {
+    background-color: #9abdd3;
+    color: white;
+    padding: 50px 0;
+    border-radius: 100px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input, form select, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #3e6680;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980B9;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+#response {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+/* Submit button styles */
+button {
+    background: linear-gradient(45deg, #3498db, #2ecc71); /* Gradient background */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* Rounded corners for a soft look */
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect */
+button:hover {
+    background: linear-gradient(45deg, #2ecc71, #3498db); /* Inverse gradient on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Soft glow effect */
+}
+
+/* Active state (when clicked) */
+button:active {
+    transform: scale(1); /* Return to original size when clicked */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Back to normal shadow */
+}
+
+/* Focus effect (for accessibility) */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.8); /* Blue glow effect when focused */
+}
+
+/* Disabled button */
+button:disabled {
+    background: #bdc3c7; /* Light gray background */
+    color: #7f8c8d; /* Darker gray text */
+    cursor: not-allowed;
+    box-shadow: none;
 }
