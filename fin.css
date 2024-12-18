@@ -1,0 +1,226 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; /* Align from the top */
+    height: 100vh;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+/* Navbar Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1000; /* Ensure navbar stays on top */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    width: 100%;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #00bfff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 15px #ffcc00;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    margin-bottom: 20px;
+    margin-left: 120px;
+    margin-right: 10px;
+    width: 80%;
+    margin-top: 90px; /* Account for the fixed navbar height */
+    display: flex;
+    justify-content: center;  /* Horizontally center content */
+    align-items: center;      /* Vertically center content */
+    height: 250px;            /* Fixed height for centering */
+    text-align: center;       /* Center text inside the div */
+    font-size: 30px;
+}
+
+
+/* Form Section - Centering */
+#financial-goals {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00bfff;
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto; /* Center the section */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Form Styles */
+#financial-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Form input and button elements */
+#financial-form input,
+#financial-form select,
+#financial-form textarea {
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #00bfff;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    width: 80%; /* Adjust width */
+    max-width: 500px;
+    font-size: 1.1em;
+    transition: border 0.3s ease;
+}
+
+#financial-form input:focus,
+#financial-form select:focus,
+#financial-form textarea:focus {
+    border-color: #00ff00;
+    outline: none;
+}
+
+#financial-form button {
+    padding: 12px 20px;
+    background-color: #00bfff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#financial-form button:hover {
+    background-color: #00ff00;
+    text-shadow: 0 0 15px #00ff00;
+}
+
+/* Feedback Box */
+.feedback-box {
+    display: none;
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00ff00;
+    text-align: center;
+}
+
+/* Budget Plans and Suggestions Section */
+#budget-plans, #saving-suggestions, #advice {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00bfff;
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 60px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: 2px solid #00bfff;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    width: 100%;
+    transition: border 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #00ff00;
+    outline: none;
+}
+
+#contact-form button {
+    background-color: #00bfff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #00ff00;
+    text-shadow: 0 0 15px #00ff00;
+}
+
+/* Add a rotating background animation */
+@keyframes rotateBackground {
+    0% {
+        background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    }
+    50% {
+        background: linear-gradient(45deg, #3f51b5, #ff4081, #2196f3);
+    }
+    100% {
+        background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    }
+}
+
+body {
+    animation: rotateBackground 10s ease infinite;
+}
