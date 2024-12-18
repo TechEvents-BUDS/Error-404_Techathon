@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fin.css">
+</head>
+<body>
+    
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="fin.html">Home</a></li>
+                    <li><a href="fin.html">Budget Plans</a></li>
+                    <li><a href="fin.html">Financial Goals</a></li>
+                    <li><a href="fin.html">Spending Advice</a></li>
+                    <li><a href="fin.html">Contact</a></li>
+                    <li><a href="tax.html" target="_blank">Tax Calculator</a></li>
+                    <li><a href="invest.html">Investment Calculator</a></li>
+                </ul>
+            </nav>
+        </header>
+    <!-- !-- Tax Calculator Section --> 
+    <section id="tax-calculator">
+        <h2>Tax Calculator</h2>
+        <form id="tax-form">
+            <label for="income">Income:</label>
+            <input type="number" id="income" required placeholder="Enter your income">
+
+            <label for="tax-rate">Tax Rate (%):</label>
+            <input type="number" id="tax-rate" required placeholder="Enter tax rate">
+
+            <button type="submit" id="calculate-tax-btn">Calculate Tax</button>
+        </form>
+        <div id="tax-result"></div>
+    </section>
+
+    <script>
+      // Tax Calculator Function
+function calculateTax(income, taxRate) {
+    // Calculate the tax amount
+    const taxAmount = (income * (taxRate / 100)).toFixed(2);
+    // Calculate the net income after tax
+    const netIncome = (income - taxAmount).toFixed(2);
+
+    // Return the result as HTML
+    return `
+        <h3>Tax Calculation Result:</h3>
+        <ul>
+            <li><strong>Tax Amount:</strong> $${taxAmount}</li>
+            <li><strong>Net Income:</strong> $${netIncome}</li>
+        </ul>
+    `;
+}
+
+// Tax form submission handler
+document.getElementById("tax-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Get the values of income and tax rate from the form
+    const income = parseFloat(document.getElementById("income").value);
+    const taxRate = parseFloat(document.getElementById("tax-rate").value);
+
+    // Validate the input
+    if (isNaN(income) || isNaN(taxRate) || income <= 0 || taxRate < 0) {
+        alert("Please enter valid values for both income and tax rate.");
+        return;
+    }
+
+    // Calculate and display tax result
+    const taxResult = calculateTax(income, taxRate);
+    document.getElementById("tax-result").innerHTML = taxResult;
+});
+
+
+    </script>
+    <footer>
+        <p>&copy; 2024 Personal Finance Educator | All rights reserved</p>
+    </footer>
+
+</body>
+</html>
